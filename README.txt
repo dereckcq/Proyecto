@@ -1,1 +1,17 @@
-# Proyecto
+Universidad de Costa Rica
+
+Informática Empresarial
+
+IF0001 - Desarollo de Software 1
+
+NOMBRE DEL PROYECTO 
+
+NOMBRES ESTUDIANTES Y CARNÉ
+
+Mag. Wendy Ramírez González
+
+DESCRIPCION BREVE DEL JUEGO
+
+INSTRUCCIONES PARA EJECUTAR EL PROYECTO 
+
+ACLARACIONES DEL PROYECTO 
