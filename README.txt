@@ -6,7 +6,7 @@ IF0001 - Desarollo de Software 1
 
 NOMBRE DEL PROYECTO 
 
-NOMBRES ESTUDIANTES Y CARNÉ
+Natalia
 
 Mag. Wendy Ramírez González
 
