@@ -7,7 +7,7 @@ public class Arma {
   private int danioMaximo;
   
   
-  // Constructor con parametros 
+  //Constructor con parametros 
   public Arma (String nombre , int danioMaximo , int danioMinimo){
     
     if (nombre != null && !nombre.equals("")) {
@@ -29,7 +29,7 @@ public class Arma {
     } 
   }
   
-  //metodo Para generar danio aleatorio 
+  //Metodo para generar danio aleatorio 
   public int generarDanio() {
     int danioGenerado = (int)(Math.random() * (danioMaximo - danioMinimo + 1)) + danioMinimo;
     return danioGenerado;
@@ -61,7 +61,7 @@ public class Arma {
       }
   }
   
-  // Metodos get 
+  //Metodos get 
   public String getNombre() {
     return nombre;
   }

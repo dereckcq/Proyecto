@@ -94,7 +94,7 @@ public class Protagonista {
     }
   }
   
-  //metodo get para obtener la defensa
+  //Metodo get para obtener la defensa
   public int getDefensa(){
     return defensa;
   }
@@ -105,24 +105,24 @@ public class Protagonista {
     }
   }
 
-  //metodo get para llamar a Arma
+  //Metodo get para llamar a Arma
   public Arma getArma(){
     return arma;
   }
   
-  //metodo para asignar la cantidad de pociones
+  //Metodo para asignar la cantidad de pociones
   public void setCantidadPociones(int cantidadPociones){
     if (cantidadPociones >= 0) {
       this.cantidadPociones = cantidadPociones;
     }
   }
   
-  //metodo para obtener la cantidad de pociones
+  //Metodo para obtener la cantidad de pociones
   public int getCantidadPociones(){
     return cantidadPociones;
   }
   
-  //metodo que reduce la vida del protagonista al recibir dano
+  //Metodo que reduce la vida del protagonista al recibir dano
   public void recibirDanio(int danio) {
     vida = vida - danio;
     //este if se encarga de evitar que la vida sea negativa
@@ -131,7 +131,7 @@ public class Protagonista {
     }
   }
 
-  //metodo que utiliza una pocion para recuperar vida
+  //Metodo que utiliza una pocion para recuperar vida
   public boolean usarPocion() {
     if (cantidadPociones > 0) {
       vida = 100;
@@ -142,7 +142,7 @@ public class Protagonista {
     }
   }
 
-//metodo que se encarga de verficar si el protagonista sigue vivo
+//Metodo que se encarga de verficar si el protagonista sigue vivo
   public boolean estaVivo() {
     if (vida > 0){
       return true;
@@ -151,7 +151,7 @@ public class Protagonista {
     }
   }
   
-  //metodo toString para mostrar la informacion completa
+  //Metodo toString para mostrar la informacion completa
   @Override
   public String toString(){
     return ("El nombre del protagonista es: " + nombre + "\nLa vida del protagonista es: " + vida + "\nEl ataque del protagonista es: " + ataque + "\nLa defensa del protagonista es: " + defensa + "\nEl arma del protagonista es: " + arma + "\nLa cantidad de pociones del protagonista es: " + cantidadPociones);
