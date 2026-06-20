@@ -9,9 +9,6 @@ public class Protagonista {
   private int cantidadPociones;
   private Arma arma;
   
-  //constructor vacio
-  public Protagonista() {
-  }
   
   //constructor con parametros
   public Protagonista(String nombre, int vida, int ataque, int defensa, Arma arma, int cantidadPociones) {
@@ -36,6 +33,10 @@ public class Protagonista {
     //validacion de la cantidad de pociones
      if (cantidadPociones >= 0) {
       this.cantidadPociones = cantidadPociones;
+    }
+    //validacion del arma
+    if (arma != null){
+        this.arma = arma;
     }
   }
   
@@ -89,8 +90,14 @@ public class Protagonista {
     return defensa;
   }
   
+  public void setArma(Arma arma){
+    if (arma != null){
+      this.arma = arma;
+    }
+  }
+
   //metodo get para llamar a Arma
-  public void getArma(Arma arma){
+  public Arma getArma(){
     return arma;
   }
   
@@ -117,23 +124,28 @@ public class Protagonista {
 
   //metodo que utiliza una pocion para recuperar vida
   public boolean usarPocion() {
-        if (cantidadPociones > 0) {
-            vida = 100;
-            cantidadPociones--;
-            return true;
-        }
-        return false;
+    if (cantidadPociones > 0) {
+      vida = 100;
+      cantidadPociones--;
+      return true;
+    }else{
+      return false;
     }
+  }
 
 //metodo que se encarga de verficar si el protagonista sigue vivo
   public boolean estaVivo() {
-        return vida > 0;
+    if (vida > 0){
+      return true;
+    }else{
+      return false;
     }
+  }
   
   //metodo toString para mostrar la informacion completa
   @Override
   public String toString(){
-    return ("El nombre el protagonista es: " + nombre + "\nLa vida del protagonista es: " + vida + "\nEl ataque del protagonista es: " + ataque + "\nLa defensa del protagonista es: " + defensa + "\nEl arma del protagonista es: " + arma + "\nLa cantidad de pociones del protagonista es: " + cantidadPociones);
+    return ("El nombre del protagonista es: " + nombre + "\nLa vida del protagonista es: " + vida + "\nEl ataque del protagonista es: " + ataque + "\nLa defensa del protagonista es: " + defensa + "\nEl arma del protagonista es: " + arma + "\nLa cantidad de pociones del protagonista es: " + cantidadPociones);
   }
 
 
