@@ -1,7 +1,10 @@
-package modelo; //paquete donde se encuentra la clase
+package modelo; //Paquete donde se encuentra la clase
+
+//Clase Protagonista: Representa al personaje controlado por el jugador
+
 public class Protagonista {
 
-//atributos que pertenecen a la clase
+//Atributos que pertenecen a la clase
   private String nombre;
   private int vida;
   private int ataque;
@@ -10,41 +13,47 @@ public class Protagonista {
   private Arma arma;
   
   
-  //constructor con parametros
+  //Constructor con parametros
   public Protagonista(String nombre, int vida, int ataque, int defensa, Arma arma, int cantidadPociones) {
-    //validacion del nombre
+
+    //Validacion del nombre
     if (nombre != null && !nombre.equals("")){
       this.nombre = nombre;
-    }else{
+    } else {
       this.nombre = "sin nombre";
     }
-    //validacion de la vida
+
+    //Validacion de la vida
     if (vida >= 0) {
       this.vida = vida;
     }
-    //validacion del ataque
+
+    //Validacion del ataque
     if (ataque >= 0) {
       this.ataque = ataque;
     }
-    //validacion de la defensa
+
+    //Validacion de la defensa
     if (defensa >= 0) {
       this.defensa = defensa;
     }
-    //validacion de la cantidad de pociones
+
+    //Validacion de la cantidad de pociones
      if (cantidadPociones >= 0) {
       this.cantidadPociones = cantidadPociones;
     }
-    //validacion del arma
+
+    //Validacion del arma
     if (arma != null){
         this.arma = arma;
     }
   }
   
-  //metodo set para asignar el nombre
+  //Metodo set para asignar el nombre
   public void setNombre(String nombre){
     if (nombre != null && !nombre.equals("")){
       this.nombre = nombre;
-    }else{
+    } else {
       this.nombre = "sin nombre";
     }
   }
@@ -128,7 +137,7 @@ public class Protagonista {
       vida = 100;
       cantidadPociones--;
       return true;
-    }else{
+    } else {
       return false;
     }
   }
@@ -137,7 +146,7 @@ public class Protagonista {
   public boolean estaVivo() {
     if (vida > 0){
       return true;
-    }else{
+    } else {
       return false;
     }
   }
@@ -147,3 +156,5 @@ public class Protagonista {
   public String toString(){
     return ("El nombre del protagonista es: " + nombre + "\nLa vida del protagonista es: " + vida + "\nEl ataque del protagonista es: " + ataque + "\nLa defensa del protagonista es: " + defensa + "\nEl arma del protagonista es: " + arma + "\nLa cantidad de pociones del protagonista es: " + cantidadPociones);
   }
+}
+  
