@@ -147,6 +147,3 @@ public class Protagonista {
   public String toString(){
     return ("El nombre del protagonista es: " + nombre + "\nLa vida del protagonista es: " + vida + "\nEl ataque del protagonista es: " + ataque + "\nLa defensa del protagonista es: " + defensa + "\nEl arma del protagonista es: " + arma + "\nLa cantidad de pociones del protagonista es: " + cantidadPociones);
   }
-
-
-
