@@ -1,5 +1,6 @@
-package vista;
-import javax.swing.JOptionPane;
+package vista; //Paquete de la clase
+
+import javax.swing.JOptionPane; //Se importa JOptionPane
 
 //Clase Lector: será responsable de solicitar datos al usuario utilizando JOptionPane. 
 //Su función es centralizar la entrada de datos para evitar que todo el programa solicite información directamente desde distintas clases.
