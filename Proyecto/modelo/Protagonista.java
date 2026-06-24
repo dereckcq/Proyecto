@@ -1,6 +1,6 @@
 package modelo; //Paquete donde se encuentra la clase
 
-//Clase Protagonista: Representa al personaje controlado por el jugador
+//Clase Protagonista: Representa al personaje controlado por el jugador en el Combate
 
 public class Protagonista {
 

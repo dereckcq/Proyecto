@@ -1,6 +1,10 @@
-package modelo;
+package modelo; //Paquete de la clase
+
+//Método Arma para usar en la clase Combate
 
 public class Arma {
+
+  //Atributos
   
   private String nombre;
   private int danioMinimo;
@@ -29,7 +33,7 @@ public class Arma {
     } 
   }
   
-  //Metodo para generar danio aleatorio 
+  //Metodo para generar daño aleatorio 
   public int generarDanio() {
     int danioGenerado = (int)(Math.random() * (danioMaximo - danioMinimo + 1)) + danioMinimo;
     return danioGenerado;
