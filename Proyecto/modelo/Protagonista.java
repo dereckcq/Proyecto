@@ -132,7 +132,7 @@ public class Protagonista {
   }
   
   //Metodo para asignar la cantidad de pociones
-  public void setCantidadPociones(int cantidadPociones){
+  public void setCantidadPociones(int cantidadPociones) throws ExcepcionValorNegativo {
     if (cantidadPociones >= 0) {
       this.cantidadPociones = cantidadPociones;
     }else{

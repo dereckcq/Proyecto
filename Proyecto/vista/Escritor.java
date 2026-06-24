@@ -17,6 +17,6 @@ public class Escritor {
 
     public static void mostrarError(String mensaje) {
 
-        JOptionPane.showMessageDialog(null, mensaje, "HA OCURRIDO UN ERROR" , ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, mensaje, "HA OCURRIDO UN ERROR" , JOptionPane.ERROR_MESSAGE);
     }
 }

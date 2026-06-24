@@ -108,7 +108,7 @@ public class Enemigo {
   }
 
   //metodo set para asignar el arma
-  public void setArma(Arma arma) throws ExcepcionValorNegativo {
+  public void setArma(Arma arma) throws ExcepcionValorNulo {
      if (arma != null){
         this.arma = arma;
     }else{
@@ -136,7 +136,7 @@ public class Enemigo {
     int danioTotal = ataque;
     //Si el enemigo tiene un arma, se suma el dano del arma al ataque base
     if (arma != null) {
-      danioTotal = danioTotal + arma.getDanio();
+      danioTotal = danioTotal + Arma.getDanio();
     }
     return danioTotal;
   }
