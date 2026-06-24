@@ -122,12 +122,7 @@ public class Combate {
     
     protagonista.recibirDanio(danio);
     
-    Escritor.mostrarMensaje(
-                            enemigo.getNombre() + 
-                            " atacó a " + 
-                            protagonista.getNombre() + 
-                            " y le infligió " + 
-                            danio + " puntos de daño." );
+    Escritor.mostrarMensaje(enemigo.getNombre() + " atacó a " + protagonista.getNombre() + " y le infligió " + danio + " puntos de daño." );
     
   }
   
