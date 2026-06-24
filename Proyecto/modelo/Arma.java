@@ -1,5 +1,8 @@
 package modelo; //Paquete de la clase
 
+import Proyecto.excepciones.ExcepcionValorNegativo;
+import Proyecto.excepciones.ExcepcionValorNulo;
+
 //Método Arma para usar en la clase Combate
 
 public class Arma {
@@ -12,12 +15,12 @@ public class Arma {
   
   
   //Constructor con parametros 
-  public Arma (String nombre , int danioMaximo , int danioMinimo){
+  public Arma (String nombre , int danioMaximo , int danioMinimo) throws ExcepcionValorNegativo, ExcepcionValorNulo {
     
     if (nombre != null && !nombre.equals("")) {
       this.nombre = nombre;
     }else{
-      this.nombre = "sin nombre";
+      throw new ExcepcionValorNulo("El nombre no puede ser nulo o vacio");
     }
     
     if (danioMaximo >= 0 && danioMaximo <= 100 ) {
@@ -41,7 +44,7 @@ public class Arma {
   
   
   //Metodos set 
-  public void setNombre(String nombre) {
+  public void setNombre(String nombre) throws ExcepcionValorNulo {
     if (nombre != null && !nombre.equals("")) {
       this.nombre = nombre;
     }else{
@@ -49,7 +52,7 @@ public class Arma {
     }
   }   
   
-  public void setDanioMaximo (int danioMaximo){
+  public void setDanioMaximo (int danioMaximo) throws ExcepcionValorNegativo{
     if (danioMaximo >= 0 && danioMaximo <= 100 ){
       this.danioMaximo = danioMaximo;
     }else{
@@ -57,7 +60,7 @@ public class Arma {
     } 
   }
   
-  public void setDanioMinimo (int danioMinimo){
+  public void setDanioMinimo (int danioMinimo) throws ExcepcionValorNegativo{
     if (danioMinimo >= 0 && danioMinimo <= 100 ){
       this.danioMinimo = danioMinimo
     }else{

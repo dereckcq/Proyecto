@@ -1,5 +1,8 @@
 package modelo; //Paquete donde se encuentra la clase
 
+import Proyecto.excepciones.ExcepcionValorNegativo;
+import Proyecto.excepciones.ExcepcionValorNulo;
+
 //Clase Protagonista: Representa al personaje controlado por el jugador en el Combate
 
 public class Protagonista {
@@ -14,47 +17,57 @@ public class Protagonista {
   
   
   //Constructor con parametros
-  public Protagonista(String nombre, int vida, int ataque, int defensa, Arma arma, int cantidadPociones) {
+  public Protagonista(String nombre, int vida, int ataque, int defensa, Arma arma, int cantidadPociones) throws ExcepcionValorNegativo, ExcepcionValorNulo {
 
     //Validacion del nombre
-    if (nombre != null && !nombre.equals("")){
+    if (nombre != null && !nombre.equals("")) {
       this.nombre = nombre;
-    } else {
-      this.nombre = "sin nombre";
+    }else{
+      throw new ExcepcionValorNulo("El nombre no puede ser nulo o vacio");
     }
 
     //Validacion de la vida
     if (vida >= 0) {
       this.vida = vida;
+    }else{
+      throw new ExcepcionValorNegativo("La vida debe ser mayor a cero");
     }
 
     //Validacion del ataque
     if (ataque >= 0) {
       this.ataque = ataque;
+    }else{
+      throw new ExcepcionValorNegativo("El ataque debe ser mayor a cero");
     }
 
     //Validacion de la defensa
     if (defensa >= 0) {
       this.defensa = defensa;
+    }else{
+      throw new ExcepcionValorNegativo("La defensa debe ser mayor cero");
     }
 
     //Validacion de la cantidad de pociones
      if (cantidadPociones >= 0) {
       this.cantidadPociones = cantidadPociones;
+    }else{
+      throw new ExcepcionValorNegativo("La cantidad de pociones no puede ser negativa");
     }
 
     //Validacion del arma
     if (arma != null){
         this.arma = arma;
+    }else{
+      throw new ExcepcionValorNulo("El arma no puede estar nulo o vacio");
     }
   }
   
   //Metodo set para asignar el nombre
-  public void setNombre(String nombre){
+  public void setNombre(String nombre) throws ExcepcionValorNulo {
     if (nombre != null && !nombre.equals("")){
       this.nombre = nombre;
-    } else {
-      this.nombre = "sin nombre";
+    }else{
+      throw new ExcepcionValorNulo("El nombre no puede ser nulo o vacio");
     }
   }
   
@@ -64,9 +77,11 @@ public class Protagonista {
   }
   
   //Metodo set para asignar la vida
-  public void setVida(int vida){
+  public void setVida(int vida) throws ExcepcionValorNegativo {
     if (vida >= 0) {
       this.vida = vida;
+    }else{
+      throw new ExcepcionValorNegativo("La vida debe ser mayor a cero");
     }
   }
   
@@ -76,9 +91,11 @@ public class Protagonista {
   }
   
   //metodo set para asignar el ataque
-  public void setAtaque(int ataque){
+  public void setAtaque(int ataque) throws ExcepcionValorNegativo {
     if (ataque >= 0) {
       this.ataque = ataque;
+    }else{
+      throw new ExcepcionValorNegativo("El ataque debe ser mayor a cero");
     }
   }
   
@@ -88,9 +105,11 @@ public class Protagonista {
   }
   
   //metodo set para asignar la defensa
-  public void setDefensa(int defensa){
+  public void setDefensa(int defensa) throws ExcepcionValorNegativo {
     if (defensa >= 0) {
       this.defensa = defensa;
+    }else{
+      throw new ExcepcionValorNegativo("La defensa debe ser mayor cero");
     }
   }
   
@@ -99,13 +118,15 @@ public class Protagonista {
     return defensa;
   }
   
-  public void setArma(Arma arma){
+  public void setArma(Arma arma) throws ExcepcionValorNulo {
     if (arma != null){
       this.arma = arma;
+    }else{
+      throw new ExcepcionValorNulo("El arma no puede estar nulo o vacio");
     }
   }
 
-  //Metodo get para llamar a Arma
+  //Metodo get para llamar al Arma
   public Arma getArma(){
     return arma;
   }
@@ -114,6 +135,8 @@ public class Protagonista {
   public void setCantidadPociones(int cantidadPociones){
     if (cantidadPociones >= 0) {
       this.cantidadPociones = cantidadPociones;
+    }else{
+      throw new ExcepcionValorNegativo("La cantidad de pociones no puede ser negativa");
     }
   }
   
