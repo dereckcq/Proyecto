@@ -30,7 +30,7 @@ public class Protagonista {
     if (vida >= 0) {
       this.vida = vida;
     }else{
-      throw new ExcepcionValorNegativo("La vida debe ser mayor a cero");
+      throw new ExcepcionValorNegativo("La vida no puede ser negativa");
     }
 
     //Validacion del ataque
@@ -81,7 +81,7 @@ public class Protagonista {
     if (vida >= 0) {
       this.vida = vida;
     }else{
-      throw new ExcepcionValorNegativo("La vida debe ser mayor a cero");
+      throw new ExcepcionValorNegativo("La vida no puede ser negativa");
     }
   }
   
