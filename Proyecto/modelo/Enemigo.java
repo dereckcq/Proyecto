@@ -136,7 +136,7 @@ public class Enemigo {
     int danioTotal = ataque;
     //Si el enemigo tiene un arma, se suma el dano del arma al ataque base
     if (arma != null) {
-      danioTotal = danioTotal + Arma.getDanio();
+      danioTotal =+ danioTotal + Arma.generarDanio();
     }
     return danioTotal;
   }
