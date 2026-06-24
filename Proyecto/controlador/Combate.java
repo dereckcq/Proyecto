@@ -1,5 +1,7 @@
 package controlador; //Paquete de la clase
 
+import Proyecto.excepciones.ExcepcionValorNegativo;
+
 import vista.*; //Se importa al paquete vista
 
 import modelo.Protagonista; //Se importa el objeto Protagonista del paquete modelo.
@@ -26,7 +28,7 @@ public class Combate {
   //Método turnoProtagonista
   
   public void turnoProtagonista() {
-
+    
     boolean pasarTurno = false;
     
     while (!pasarTurno) {
@@ -39,7 +41,7 @@ public class Combate {
         
         case 1:
           
-          double danio = protagonista.getAtaque();
+          int danio = protagonista.getAtaque();
           
           if (protagonista.getArma() != null) {
             
@@ -74,7 +76,7 @@ public class Combate {
         }
         
         break; //Para volver al menú sin usar un turno
-
+        
         //Opción 3: Ver estado del protagonista y del enemigo.
         
         case 3:
@@ -87,14 +89,18 @@ public class Combate {
           
         case 4:
           
+          try {
           protagonista.setVida(0);
-          
-          Escritor.mostrarMensaje(protagonista.getNombre() + " se ha rendido. Has perdido el combate.");
-          
-          pasarTurno = true;
-
-          break;
-          
+        } catch (ExcepcionValorNegativo e) {
+          Escritor.mostrarMensaje(e.getMessage());
+        }
+        
+        Escritor.mostrarMensaje(protagonista.getNombre() + " se ha rendido. Has perdido el combate.");
+        
+        pasarTurno = true;
+        
+        break;
+        
         default:
           
           Escritor.mostrarError("¡ERROR! Opción inválida: Debe seleccionar una opción entre 1 y 4.");
@@ -107,7 +113,7 @@ public class Combate {
   
   public void turnoEnemigo() {
     
-    double danio = enemigo.getAtaque();
+    int danio = enemigo.getAtaque();
     
     if(enemigo.getArma() != null) {
       
@@ -165,4 +171,3 @@ public class Combate {
     }
   }
 }    
-   
