@@ -62,7 +62,7 @@ public class Arma {
   
   public void setDanioMinimo (int danioMinimo) throws ExcepcionValorNegativo{
     if (danioMinimo >= 0 && danioMinimo <= 100 ){
-      this.danioMinimo = danioMinimo
+      this.danioMinimo = danioMinimo;
     }else{
         this.danioMinimo = 1;
       }
