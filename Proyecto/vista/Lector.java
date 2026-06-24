@@ -11,9 +11,11 @@ public class Lector {
     public static String leerTexto(String mensaje) {
         String texto;
   
+        //Este ciclo se repite mientras el usuario no ingrese un texto válido
         do {
             texto = JOptionPane.showInputDialog(mensaje);
     
+            //Este if valida que no esté vacío ni se haya presionado cancelar
             if (texto == null || texto.equals("")) {
                 JOptionPane.showMessageDialog(null, "No puede dejar el espacio vacio");
             }
@@ -35,8 +37,8 @@ public class Lector {
                 numero = Integer.parseInt(texto);
                 valido = true;
       
-            }catch (Exception e){
-                JOptionPane.showMessageDialog(null, "Debe ingresar un número.");
+            }catch (NumberFormatException e){ //excepción que maneja el error cuando se intenta convertir texto a entero
+                JOptionPane.showMessageDialog(null, "Debe ingresar un número");
             }
         }
         return numero;
