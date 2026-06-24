@@ -26,16 +26,12 @@ public class Combate {
   //Método turnoProtagonista
   
   public void turnoProtagonista() {
+
+    boolean pasarTurno = false;
     
-    while (true) {
+    while (!pasarTurno) {
       
-      opcionSwitch = Lector.leerOpcion("Seleccione una opción:" + 
-                                       "\n1. Atacar " + 
-                                       "\n2. Usar poción " + 
-                                       "\n3. Ver estado " + 
-                                       "\n4. Rendirse",
-                                       1,
-                                       4);
+      opcionSwitch = Lector.leerOpcion("Seleccione una opción:" + "\n1. Atacar " + "\n2. Usar poción " + "\n3. Ver estado " + "\n4. Rendirse", 1, 4);
       
       switch(opcionSwitch) {
         
@@ -52,15 +48,13 @@ public class Combate {
           
           enemigo.recibirDanio(danio);
           
-          Escritor.mostrarMensaje(protagonista.getNombre() + 
-                                  " atacó a " + 
-                                  enemigo.getNombre() + 
-                                  " y le inflingió " + 
-                                  danio + " puntos de daño.");
+          Escritor.mostrarMensaje(protagonista.getNombre() + " atacó a " + enemigo.getNombre() + " y le inflingió " + danio + " puntos de daño.");
           
-          return; //Para terminar el turno del protagonista
+          pasarTurno = true; //Para terminar el turno del protagonista
           
-          //Opción 2: Usar poción
+          break; 
+          
+          //Opción 2: Usar poción, se usan pociones si hay, sino se indica que no quedan pociones.
           
         case 2: 
           
@@ -70,24 +64,26 @@ public class Combate {
           
           Escritor.mostrarMensaje(protagonista.getNombre() + " utilizó una poción y recuperó toda su vida.");
           
-          return; //Para terminar el turno del protagonista
+          
+          
+          pasarTurno = true; //Para terminar el turno del protagonista
           
         } else {
           
           Escritor.mostrarError("No tienes pociones disponibles.");
         }
         
-        continue; //Para volver al menú sin usar un turno
+        break; //Para volver al menú sin usar un turno
+
+        //Opción 3: Ver estado del protagonista y del enemigo.
         
         case 3:
           
-          Escritor.mostrarMensaje("=== Estado del protagonista ===\n" + 
-                                  protagonista.toString() + 
-                                  "\n\n=== Estado del enemigo ===\n" + 
-                                  enemigo.toString());
+          Escritor.mostrarMensaje("=== Estado del protagonista ===\n" + protagonista.toString() + "\n\n=== Estado del enemigo ===\n" + enemigo.toString());
           
-          continue; //Se usa un continue para que no se consuma un turno
+          break; //No se consume turno
           
+          //Opción 4: Rendirse, el protagonista se rinde y pierde la batalla inmediatamente.
           
         case 4:
           
@@ -95,7 +91,9 @@ public class Combate {
           
           Escritor.mostrarMensaje(protagonista.getNombre() + " se ha rendido. Has perdido el combate.");
           
-          return;
+          pasarTurno = true;
+
+          break;
           
         default:
           
