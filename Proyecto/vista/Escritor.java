@@ -10,7 +10,7 @@ public class Escritor {
     
     public static void mostrarMensaje(String mensaje) {
 
-        JOptionPane.showMessageDialog(mensaje);
+        JOptionPane.showMessageDialog(null, mensaje);
     } 
 
     //Método mostrarError para escribir mensajes de error por JOptionPane.
