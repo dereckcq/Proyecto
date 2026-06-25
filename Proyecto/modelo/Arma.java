@@ -15,7 +15,7 @@ public class Arma {
   
   
   //Constructor con parametros 
-  public Arma (String nombre , int danioMaximo , int danioMinimo) throws ExcepcionValorNegativo, ExcepcionValorNulo {
+  public Arma (String nombre , int danioMinimo , int danioMaximo) throws ExcepcionValorNegativo, ExcepcionValorNulo {
     
     if (nombre != null && !nombre.equals("")) {
       this.nombre = nombre;
