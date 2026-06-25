@@ -1,6 +1,6 @@
 package controlador; //Paquete de la clase
 
-//Importaciones de los objetos
+//Importaciones de las clases
 import controlador.Combate;
 import modelo.Arma;
 import modelo.Enemigo;
@@ -16,6 +16,7 @@ public class Main {
     
     
     try{
+      //mensaje de bienvenida
       Escritor.mostrarMensaje("¡Bienvenido o bienvenida a las Crónicas del Programador!"); //Bienvenida al juego
       
       String nombre = Lector.leerTexto("¿Cómo desea que se llame su Protagonista?"); //Ingresar nombre
@@ -34,12 +35,14 @@ public class Main {
       Arma sai = new Arma("Sai", 20, 32);
       Arma resortera = new Arma("Resortera", 11, 24);
       
-      //Seleccionar arma
+      //Seleccion del arma
+
+      //Permite escoger el arma del protagonista
       int opcionArma = Lector.leerOpcion("Que arma desea usar: \n " + "1. Un mango" + "\n 2. Lata de atún" + "\n 3. Bisturí" + "\n 4. Legos" + "\n 5. Candelabro",1 ,5);
       
       Arma armaSeleccionada = legos; //Arma por defecto
       
-      switch(opcionArma){ 
+      switch(opcionArma){  //Este swich signa el arma seleccionada
         
         case 1:
           armaSeleccionada = mango; //Arma 1
@@ -62,7 +65,7 @@ public class Main {
           break;
       }
       
-      //Protagonista y sus estadísticas
+      //Protagonista y sus estadísticas iniciales
       Protagonista protagonista = new Protagonista(nombre,175, 10, 25, armaSeleccionada, 3);
       
       //Enemigos y sus estadísticas
@@ -74,9 +77,9 @@ public class Main {
       
       int enemigoAleatorio = (int)(Math.random() * 3); //Operación para que el enemigo se escoga de manera aleatoria
       
-      Enemigo enemigo;
+      Enemigo enemigo; //variable que almacena el enemigo seleccionado
       
-      switch(enemigoAleatorio){
+      switch(enemigoAleatorio){ //selecciona un enemigo a partor del numero generado
         
         case 0:
           enemigo = ronald; //Enemigo 1
@@ -92,19 +95,19 @@ public class Main {
           
       }
       
-      Escritor.mostrarMensaje(enemigo.toString());
+      Escritor.mostrarMensaje(enemigo.toString()); //muestra la informacion del enemigo
       
-      Combate combate = new Combate(protagonista, enemigo);
+      Combate combate = new Combate(protagonista, enemigo); //crea el combate utilizando al protagonista y al enemigo
       
-      combate.ejecutarCombate();
+      combate.ejecutarCombate(); //ejecuta el combate
       
     } catch (ExcepcionValorNulo e) {
       
-      Escritor.mostrarError(e.getMessage());
+      Escritor.mostrarError(e.getMessage()); //Muestra un mensaje de error cuando se ingresa un valor nulo
       
     } catch (ExcepcionValorNegativo e) {
       
-      Escritor.mostrarError(e.getMessage());
+      Escritor.mostrarError(e.getMessage()); //Muestra un mensaje de error cuando se ingresa un valor negativo
     } 
   } 
 }
