@@ -8,7 +8,6 @@ import excepciones.ExcepcionValorNulo;
 public class Arma {
 
   //Atributos
-  
   private String nombre;
   private int danioMinimo;
   private int danioMaximo;
