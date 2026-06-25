@@ -84,6 +84,6 @@ public class Arma {
   //Metodo toString
   @Override
   public String toString() {
-    return "Nombre: " + nombre + "\nDanioMaximo: " + danioMaximo + "\nDanio minimo: " + danioMinimo;
+    return nombre + "\nDaño máximo: " + danioMaximo + "\nDaño mínimo: " + danioMinimo;
   }
 }
