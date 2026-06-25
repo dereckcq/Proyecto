@@ -1,7 +1,7 @@
 package modelo; //Paquete de la clase
 
-import Proyecto.excepciones.ExcepcionValorNegativo;
-import Proyecto.excepciones.ExcepcionValorNulo;
+import excepciones.ExcepcionValorNegativo;
+import excepciones.ExcepcionValorNulo;
 
 //Método Arma para usar en la clase Combate
 

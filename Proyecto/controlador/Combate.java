@@ -1,6 +1,6 @@
 package controlador; //Paquete de la clase
 
-import Proyecto.excepciones.ExcepcionValorNegativo;
+import excepciones.ExcepcionValorNegativo;
 
 import vista.*; //Se importa al paquete vista
 

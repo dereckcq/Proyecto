@@ -1,7 +1,7 @@
 package modelo; //Paquete donde se encuentra la clase
 
-import Proyecto.excepciones.ExcepcionValorNegativo;
-import Proyecto.excepciones.ExcepcionValorNulo;
+import excepciones.ExcepcionValorNegativo;
+import excepciones.ExcepcionValorNulo;
 
 //Clase Protagonista: Representa al personaje controlado por el jugador en el Combate
 
