@@ -102,7 +102,7 @@ public class Combate {
         break;
         
         default:
-          
+
           Escritor.mostrarError("¡ERROR! Opción inválida: Debe seleccionar una opción entre 1 y 4.");
           
       }
