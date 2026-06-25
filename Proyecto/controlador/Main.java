@@ -66,20 +66,20 @@ public class Main {
       }
       
       //Protagonista y sus estadísticas iniciales
-      Protagonista protagonista = new Protagonista(nombre,175, 10, 25, armaSeleccionada, 3);
+      Protagonista protagonista = new Protagonista(nombre, 160, 10, 25, armaSeleccionada, 3);
       
       //Enemigos y sus estadísticas
-      Enemigo ronald = new Enemigo("Ronald McDonald" ,250, 6, 5, manopla);
+      Enemigo ronald = new Enemigo("Ronald McDonald", 200, 6, 5, manopla);
       
-      Enemigo rafael = new Enemigo("Rafael" ,125, 16, 12, sai);
+      Enemigo rafael = new Enemigo("Rafael", 125, 16, 12, sai);
       
-      Enemigo rojo = new Enemigo("Angry Bird" ,175, 10, 15, resortera);
+      Enemigo rojo = new Enemigo("Angry Bird", 175, 10, 15, resortera);
       
       int enemigoAleatorio = (int)(Math.random() * 3); //Operación para que el enemigo se escoga de manera aleatoria
       
       Enemigo enemigo; //variable que almacena el enemigo seleccionado
       
-      switch(enemigoAleatorio){ //selecciona un enemigo a partor del numero generado
+      switch(enemigoAleatorio) { //Selecciona un enemigo a partor del numero generado
         
         case 0:
           enemigo = ronald; //Enemigo 1
@@ -92,7 +92,7 @@ public class Main {
         default:
           enemigo = rojo; //Enemigo 3
           break;
-          
+
       }
       
       Escritor.mostrarMensaje(enemigo.toString()); //muestra la informacion del enemigo

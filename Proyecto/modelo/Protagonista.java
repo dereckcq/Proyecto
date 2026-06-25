@@ -157,7 +157,7 @@ public class Protagonista {
   //Metodo que utiliza una pocion para recuperar vida
   public boolean usarPocion() {
     if (cantidadPociones > 0) {
-      vida = 100;
+      vida = 160;
       cantidadPociones--;
       return true;
     } else {
