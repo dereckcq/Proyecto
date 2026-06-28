@@ -16,7 +16,7 @@ public class Combate {
   
   private Protagonista protagonista;
   private Enemigo enemigo;
-  int opcionSwitch;
+  private int opcionSwitch;
   
   //Método constructor con parámetros
   
