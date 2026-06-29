@@ -16,7 +16,6 @@ public class Combate {
   
   private Protagonista protagonista;
   private Enemigo enemigo;
-  private int opcionSwitch;
   
   //Método constructor con parámetros
   
@@ -33,7 +32,7 @@ public class Combate {
     
     while (!pasarTurno) {
       
-      opcionSwitch = Lector.leerOpcion("Seleccione una opción:" + "\n1. Atacar " + "\n2. Usar poción " + "\n3. Ver estado " + "\n4. Rendirse", 1, 4);
+      int opcionSwitch = Lector.leerOpcion("Seleccione una opción:" + "\n1. Atacar " + "\n2. Usar poción " + "\n3. Ver estado " + "\n4. Rendirse", 1, 4);
       
       switch(opcionSwitch) {
         
