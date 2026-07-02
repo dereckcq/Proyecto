@@ -117,6 +117,7 @@ public class Main {
       if(opcion == 2){
         jugar = false;
       }
+    }
 
       Escritor.mostrarMensaje("\n========== ESTADÍSTICAS ==========");
 
