@@ -4,7 +4,6 @@ import excepciones.ExcepcionValorNegativo; //Se importan las excepciones
 import excepciones.ExcepcionValorNulo;
 
 //Clase Protagonista: Representa al personaje controlado por el jugador en el Combate
-
 public class Protagonista {
 
 //Atributos que pertenecen a la clase
@@ -56,7 +55,7 @@ public class Protagonista {
 
     //Validacion del arma
     if (arma != null){
-        this.arma = arma;
+      this.arma = arma;
     }else{
       throw new ExcepcionValorNulo("El arma no puede estar nulo o vacio");
     }
@@ -147,7 +146,17 @@ public class Protagonista {
   
   //Metodo que reduce la vida del protagonista al recibir dano
   public void recibirDanio(int danio) {
+    //reduce el danio segun la defensa del personaje
+    danio = danio - defensa;
+    
+    //Este if se encarga de evitar que la defensa convierta el danio en un  numero negativo
+    if (danio < 0) {
+      danio = 0;
+    }
+
+    //resta el danio a la vida
     vida = vida - danio;
+
     //este if se encarga de evitar que la vida sea negativa
     if (vida < 0) {
       vida = 0;
