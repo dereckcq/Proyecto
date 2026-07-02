@@ -1,6 +1,6 @@
 package controlador; //Paquete de la clase
 
-import excepciones.ExcepcionValorNegativo;
+import excepciones.ExcepcionValorNegativo; //Se importa la clase de expcion de valor negativo.
 
 import vista.*; //Se importa al paquete vista
 
@@ -9,23 +9,19 @@ import modelo.Protagonista; //Se importa el objeto Protagonista del paquete mode
 import modelo.Enemigo; //Se importa el objeto Enemigo del paquete modelo.
 
 //Clase Combate: Controla la lógica principal del enfrentamiento entre el enemigo y el enemigo
-
 public class Combate {
   
   //Atributos de la clase
-  
   private Protagonista protagonista;
   private Enemigo enemigo;
   
   //Método constructor con parámetros
-  
   public Combate(Protagonista protagonista, Enemigo enemigo) {
     this.protagonista = protagonista;
     this.enemigo = enemigo;
   }
   
   //Método turnoProtagonista
-  
   public void turnoProtagonista() {
     
     boolean pasarTurno = false;
@@ -109,7 +105,6 @@ public class Combate {
   }
   
   //Método turnoEnemigo
-  
   public void turnoEnemigo() {
     
     int danio = enemigo.getAtaque();
@@ -126,25 +121,34 @@ public class Combate {
   }
   
   //Método ejecutarCombate
-  
   public void ejecutarCombate() {
+
+    //genrea aletoriamente quien inicia si sale true inicia el protagonista si sale false inicia el enemigo
+    boolean turnoProtagonista = math.random() < 0.5;
     
+    //este while se encarga de que el combate siga mientras ninguno haya sido derrotado
     while(!verificarFinalizacion()) {
       
-      turnoProtagonista();
-      
+      if (turnoDelProtagonista) {
+        Escritor.mostrarMensaje("El protagonista inicia la ronda");
+        turnoProtagonista();
+      }else{
+        Escritor.mostrarMensaje("El enemigo inicia la ronda");
+        turnoEnemigo();
+      }
+
+      //este if verifica si el combate termino despues del ataque
       if (verificarFinalizacion()) {
         break;
       }
-      
-      turnoEnemigo();
+
+      //Cambia el turno inicial para la siguiente ronda
+      turnoDelProtagonista = !turnoDelProtagonista;
     }
-    
     verificarGanador();
-  }
+}
   
 //Método verificarFinalizacion
-  
   public boolean verificarFinalizacion() {
     
     return !protagonista.estaVivo() || !enemigo.estaVivo();
@@ -152,7 +156,6 @@ public class Combate {
   }
   
 //Método verificarGanador
-  
   public void verificarGanador() {
     
     if (protagonista.estaVivo()) {

@@ -123,8 +123,18 @@ public class Enemigo {
 
   //Método que reduce la vida del enemigo al recibir dano
   public void recibirDanio(int danio) {
-    vida = vida - danio;
     
+    //reduce el danio segun la defensa del personaje
+    danio = danio - defensa;
+    
+    //Este if se encarga de evitar que la defensa convierta el danio en un  numero negativo
+    if (danio < 0) {
+      danio = 0;
+    }
+
+    //resta el danio a la vida
+    vida = vida - danio;
+
     //Este if se encarga de evitar que la vida sea negativa
     if (vida < 0) {
       vida = 0;
