@@ -47,3 +47,4 @@ ACLARACIONES DEL PROYECTO:
     - modelo: Contiene las clases principales del juego.
     - vista: Contiene la interacción con el usuario.
     - excepciones: Contiene las excepciones personalizadas (Control de manejo de errores).
+    - UML: Se mandaron dos archivos, uno en draw.io y otro en PNG para facilitar y por si acaso.

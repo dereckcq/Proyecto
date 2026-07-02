@@ -75,6 +75,14 @@ public class Main {
       
       Enemigo rojo = new Enemigo("Angry Bird", 175, 10, 15, resortera);
       
+      boolean jugar = true;
+
+      while(jugar){
+
+      //Reiniciar estadísticas del protagonista para una nueva partida
+      protagonista.setVida(160);
+      protagonista.setPociones(3);
+      
       int enemigoAleatorio = (int)(Math.random() * 3); //Operación para que el enemigo se escoga de manera aleatoria
       
       Enemigo enemigo; //variable que almacena el enemigo seleccionado
@@ -83,14 +91,17 @@ public class Main {
         
         case 0:
           enemigo = ronald; //Enemigo 1
+          enemigo.setVida(200); //Reiniciar vida del enemigo para nueva partida
           break;
           
         case 1:
           enemigo = rafael; //Enemigo 2
+          enemigo.setVida(125); //Reiniciar vida del enemigo para nueva partida
           break;
           
         default:
           enemigo = rojo; //Enemigo 3
+          enemigo.setVida(175); //Reiniciar vida del enemigo para nueva partida
           break;
 
       }
@@ -100,6 +111,12 @@ public class Main {
       Combate combate = new Combate(protagonista, enemigo); //crea el combate utilizando al protagonista y al enemigo
       
       combate.ejecutarCombate(); //ejecuta el combate
+
+      int opcion = Lector.leerOpcion("\n¿Desea iniciar un nuevo combate?\n1. Sí\n2. No", 1, 2);
+
+      if(opcion == 2){
+        jugar = false;
+      }
       
     } catch (ExcepcionValorNulo e) {
       
@@ -109,5 +126,16 @@ public class Main {
       
       Escritor.mostrarError(e.getMessage()); //Muestra un mensaje de error cuando se ingresa un valor negativo
     } 
+
+  Escritor.mostrarMensaje("\n========== ESTADÍSTICAS ==========");
+
+Escritor.mostrarMensaje("\nProtagonista: " + protagonista.getNombre() + "\nVictorias: " + protagonista.getVictorias() + "\nDerrotas: " + protagonista.getDerrotas());
+
+Escritor.mostrarMensaje("\nRonald McDonald" + "\nVictorias: " + ronald.getVictorias() + "\nDerrotas: " + ronald.getDerrotas());
+
+Escritor.mostrarMensaje("\nRafael" + "\nVictorias: " + rafael.getVictorias() + "\nDerrotas: " + rafael.getDerrotas());
+
+Escritor.mostrarMensaje("\nAngry Bird" + "\nVictorias: " + rojo.getVictorias() + "\nDerrotas: " + rojo.getDerrotas());
+  
   } 
 }

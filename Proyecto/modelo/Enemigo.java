@@ -11,6 +11,8 @@ public class Enemigo {
   private int ataque;
   private int defensa;
   private Arma arma;
+  private int victorias;
+  private int derrotas;
 
   //constructor con parametros
   public Enemigo(String nombre, int vida, int ataque, int defensa, Arma arma) throws ExcepcionValorNegativo, ExcepcionValorNulo {
@@ -43,12 +45,15 @@ public class Enemigo {
       throw new ExcepcionValorNegativo("La defensa debe ser mayor cero");
     }
 
-    //Asignación del arma
+    //Validación del arma
      if (arma != null){
         this.arma = arma;
     }else{
       throw new ExcepcionValorNulo("El arma no puede estar nulo o vacio");
     }
+    
+    this.victorias = 0; //Establece la cantidad de victorias a 0 para acumularlas
+    this.derrotas = 0;  //Establece la cantidad de derrotas a 0 para acumularlas
   }
 
   //Método set para asignar el nombre
@@ -120,6 +125,26 @@ public class Enemigo {
   public Arma getArma() {
     return arma;
   }
+
+  //Método para sumar las victorias
+  public void sumarVictoria() {
+    victorias++;
+}
+
+//Método para sumar las derrotas
+public void sumarDerrota() {
+    derrotas++;
+}
+
+//Método get para conseguir las victorias
+public int getVictorias() {
+    return victorias;
+}
+
+//Método get para conseguir las derrotas
+public int getDerrotas() {
+    return derrotas;
+}
 
   //Método que reduce la vida del enemigo al recibir dano
   public void recibirDanio(int danio) {

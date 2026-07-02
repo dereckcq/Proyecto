@@ -157,14 +157,20 @@ public class Combate {
   
 //Método verificarGanador
   public void verificarGanador() {
-    
+
     if (protagonista.estaVivo()) {
-      
-      Escritor.mostrarMensaje("¡Felicidades! Has derrotado a " + enemigo.getNombre());
-      
+
+        protagonista.sumarVictoria();
+        enemigo.sumarDerrota();
+
+        Escritor.mostrarMensaje("Felicidades! Has derrotado a " + enemigo.getNombre());
+
     } else {
-      
-      Escritor.mostrarMensaje("Has sido derrotado por " + enemigo.getNombre());
+
+        protagonista.sumarDerrota();
+        enemigo.sumarVictoria();
+
+        Escritor.mostrarMensaje("Has sido derrotado por " + enemigo.getNombre());
     }
   }
 }    

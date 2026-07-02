@@ -13,10 +13,12 @@ public class Protagonista {
   private int defensa;
   private int cantidadPociones;
   private Arma arma;
+  private int victorias;
+  private int derrotas;
   
   
   //Constructor con parametros
-  public Protagonista(String nombre, int vida, int ataque, int defensa, Arma arma, int cantidadPociones) throws ExcepcionValorNegativo, ExcepcionValorNulo {
+  public Protagonista(String nombre, int vida, int ataque, int defensa, Arma arma, int cantidadPociones, int victorias, int derrotas) throws ExcepcionValorNegativo, ExcepcionValorNulo {
 
     //Validacion del nombre
     if (nombre != null && !nombre.equals("")) {
@@ -59,6 +61,9 @@ public class Protagonista {
     }else{
       throw new ExcepcionValorNulo("El arma no puede estar nulo o vacio");
     }
+
+    this.victorias = 0; //Establece la cantidad de victorias a 0 para acumularlas
+    this.derrotas = 0;  //Establece la cantidad de derrotas a 0 para acumularlas
   }
   
   //Metodo set para asignar el nombre
@@ -143,6 +148,26 @@ public class Protagonista {
   public int getCantidadPociones(){
     return cantidadPociones;
   }
+
+  //Método para sumar las victorias
+  public void sumarVictoria() {
+    victorias++;
+}
+
+//Método para sumar las derrotas
+public void sumarDerrota() {
+    derrotas++;
+}
+
+//Método get para conseguir las victorias
+public int getVictorias() {
+    return victorias;
+}
+
+//Método get para conseguir las derrotas
+public int getDerrotas() {
+    return derrotas;
+}
   
   //Metodo que reduce la vida del protagonista al recibir dano
   public void recibirDanio(int danio) {
