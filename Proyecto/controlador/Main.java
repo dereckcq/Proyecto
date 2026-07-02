@@ -117,6 +117,16 @@ public class Main {
       if(opcion == 2){
         jugar = false;
       }
+
+      Escritor.mostrarMensaje("\n========== ESTADÍSTICAS ==========");
+
+      Escritor.mostrarMensaje("\nProtagonista: " + protagonista.getNombre() + "\nVictorias: " + protagonista.getVictorias() + "\nDerrotas: " + protagonista.getDerrotas());
+
+      Escritor.mostrarMensaje("\nRonald McDonald" + "\nVictorias: " + ronald.getVictorias() + "\nDerrotas: " + ronald.getDerrotas());
+
+      Escritor.mostrarMensaje("\nRafael" + "\nVictorias: " + rafael.getVictorias() + "\nDerrotas: " + rafael.getDerrotas());
+
+      Escritor.mostrarMensaje("\nAngry Bird" + "\nVictorias: " + rojo.getVictorias() + "\nDerrotas: " + rojo.getDerrotas());
       
     } catch (ExcepcionValorNulo e) {
       
@@ -126,16 +136,5 @@ public class Main {
       
       Escritor.mostrarError(e.getMessage()); //Muestra un mensaje de error cuando se ingresa un valor negativo
     } 
-
-  Escritor.mostrarMensaje("\n========== ESTADÍSTICAS ==========");
-
-Escritor.mostrarMensaje("\nProtagonista: " + protagonista.getNombre() + "\nVictorias: " + protagonista.getVictorias() + "\nDerrotas: " + protagonista.getDerrotas());
-
-Escritor.mostrarMensaje("\nRonald McDonald" + "\nVictorias: " + ronald.getVictorias() + "\nDerrotas: " + ronald.getDerrotas());
-
-Escritor.mostrarMensaje("\nRafael" + "\nVictorias: " + rafael.getVictorias() + "\nDerrotas: " + rafael.getDerrotas());
-
-Escritor.mostrarMensaje("\nAngry Bird" + "\nVictorias: " + rojo.getVictorias() + "\nDerrotas: " + rojo.getDerrotas());
-  
   } 
 }
