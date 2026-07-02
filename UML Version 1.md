@@ -1,1 +1,0 @@
-https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=FF99CC&edit=_blank&layers=1&nav=1&title=UML%20Proyecto.drawio&dark=auto#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1Oq42RHqRdj97SKuIWyYiaE10jFafzqql%26export%3Ddownload
