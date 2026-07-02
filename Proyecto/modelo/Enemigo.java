@@ -1,6 +1,6 @@
 package modelo; //Paquete donde se encuentra la clase
 
-import excepciones.ExcepcionValorNegativo;
+import excepciones.ExcepcionValorNegativo; //Se importan las excepciones
 import excepciones.ExcepcionValorNulo;
 
 public class Enemigo {
@@ -144,6 +144,7 @@ public class Enemigo {
   //Método que calcula el dano que el enemigo inflige al atacar
   public int atacar() {
     int danioTotal = ataque;
+    
     //Si el enemigo tiene un arma, se suma el dano del arma al ataque base
     if (arma != null) {
       danioTotal =+ danioTotal + arma.generarDanio();
