@@ -66,7 +66,7 @@ public class Main {
       }
       
       //Protagonista y sus estadísticas iniciales
-      Protagonista protagonista = new Protagonista(nombre, 160, 10, 25, armaSeleccionada, 3);
+      Protagonista protagonista = new Protagonista(nombre, 160, 10, 25, armaSeleccionada, 3, 0, 0);
       
       //Enemigos y sus estadísticas
       Enemigo ronald = new Enemigo("Ronald McDonald", 200, 6, 5, manopla);
@@ -81,7 +81,7 @@ public class Main {
 
       //Reiniciar estadísticas del protagonista para una nueva partida
       protagonista.setVida(160);
-      protagonista.setPociones(3);
+      protagonista.setCantidadPociones(3);
       
       int enemigoAleatorio = (int)(Math.random() * 3); //Operación para que el enemigo se escoga de manera aleatoria
       
