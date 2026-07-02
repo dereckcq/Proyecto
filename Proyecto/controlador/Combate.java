@@ -124,12 +124,12 @@ public class Combate {
   public void ejecutarCombate() {
 
     //genrea aletoriamente quien inicia si sale true inicia el protagonista si sale false inicia el enemigo
-    boolean turnoProtagonista = math.random() < 0.5;
+    boolean turnoProtagonista = Math.random() < 0.5;
     
     //este while se encarga de que el combate siga mientras ninguno haya sido derrotado
     while(!verificarFinalizacion()) {
       
-      if (turnoDelProtagonista) {
+      if (turnoProtagonista) {
         Escritor.mostrarMensaje("El protagonista inicia la ronda");
         turnoProtagonista();
       }else{
@@ -143,7 +143,7 @@ public class Combate {
       }
 
       //Cambia el turno inicial para la siguiente ronda
-      turnoDelProtagonista = !turnoDelProtagonista;
+      turnoProtagonista = !turnoProtagonista;
     }
     verificarGanador();
 }
